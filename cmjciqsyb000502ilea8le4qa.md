@@ -1,8 +1,9 @@
 ---
 title: "Deep Dive into Machine learning Math"
-datePublished: Fri Dec 19 2025 06:59:12 GMT+0000 (Coordinated Universal Time)
+datePublished: Sun Nov 30 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: cmjciqsyb000502ilea8le4qa
 slug: deep-dive-into-machine-learning-math
+cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/OPpCbAAKWv8/upload/de51bf21bf030d44408a1cef79a75584.jpeg
 tags: machine-learning, mathematics, linear-algebra, learning-journey, learning-in-public
 
 ---
@@ -35,7 +36,7 @@ The Cartesian system is the classic grid we use to locate points. It uses two pe
 * **Coordinates:** An ordered pair (x, y)tells you exactly how far to move right/left (x-coordinate) and up/down (y-coordinate) from the origin.
     
 
-P2D=(x,y)∈R2 P3D=(x,y,z)∈R3
+$$\begin{aligned} &P_{2D} = (x, y) \in \mathrm{R}^2 \\ &P_{3D} = (x, y, z) \in \mathrm{R}^3 \end{aligned}$$
 
 ### 3\. Angles & Measurement (Degrees vs. Radians)
 
@@ -46,15 +47,15 @@ An angle measures the amount of rotation between two lines.
 * **Radians:** The standard unit in mathematics. One radian is the angle where the arc length equals the radius. A full circle is 2π radians (approx 6.28).
     
 
-Radians=Degrees×π180
+$$\mathrm{Radians} = \mathrm{Degrees} \times \frac{\pi}{180}$$
 
-x=rcos⁡θ y=rsin⁡θ tan⁡θ=yx
+$$\begin{aligned} &x = r \cos \theta \\ &y = r \sin \theta \\ &\tan \theta = \frac{y}{x} \end{aligned}$$
 
 ### 4\. The Unit Circle
 
 The Unit Circle is a circle with a radius of exactly 1, centered at (0,0). Any point on the circle edge can be defined by the angle The x-coordinate is the Cosine, and the y-coordinate is the Sine.
 
-x=cos⁡θ y=sin⁡θ x2+y2=1
+$$\begin{aligned} &x = \cos \theta \\ &y = \sin \theta \\ &x^2 + y^2 = 1 \end{aligned}$$
 
 ### 5\. Fundamental Trigonometric Identities
 
@@ -69,7 +70,7 @@ This is the most famous identity. It states that for any angle, the square of si
 * tanθ is how steep the hill is (Slope). secθ is the actual distance you walk up that hill (Hypotenuse). This identity lets us calculate the distance traveled just by knowing the steepness!
     
 
-sin2⁡θ+cos2⁡θ=1 1+tan2⁡θ=sec2⁡θ
+$$\begin{aligned} &\sin^2 \theta + \cos^2 \theta = 1 \\ &1 + \tan^2 \theta = \sec^2 \theta \end{aligned}$$
 
 B. Sum & Difference Formulas:
 
@@ -78,7 +79,7 @@ These allow us to calculate the sine or cosine of angles that are added, subtrac
 * In data processing, we often rotate vectors. If I rotate a vector by angle α and then again by β, I don't want to calculate two separate rotations. I can use the sum formula sin(α + β) to compute the final position in one step.
     
 
-sin⁡(α±β)=sin⁡αcos⁡β±cos⁡αsin⁡β cos⁡(α±β)=cos⁡αcos⁡β∓sin⁡αsin⁡β
+$$\begin{aligned} &\sin(\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta \\ &\cos(\alpha \pm \beta) = \cos \alpha \cos \beta \mp \sin \alpha \sin \beta \end{aligned}$$
 
 C. Double Angle Formulas:
 
@@ -87,7 +88,7 @@ These are special cases of the Sum formulas where the two angles are identical (
 * Often in calculus or physics engines you end up with messy terms like 2sinθcosθ.This formula lets you compress that entire mess into a single, clean term: sin(2θ). It simplifies the math significantly.
     
 
-sin⁡(2θ)=2sin⁡θcos⁡θ cos⁡(2θ)=cos2⁡θ−sin2⁡θ
+$$\begin{aligned} &\sin(2\theta) = 2 \sin \theta \cos \theta \\ &\cos(2\theta) = \cos^2 \theta - \sin^2 \theta \end{aligned}$$
 
 ### 6\. Law of Sines and Cosines
 
@@ -96,19 +97,25 @@ Standard trigonometry, only works for right-angled triangles. When we have a gen
 * **Law of Sines:** Proportional relationship between sides and angles.
     
 
-asin⁡A=bsin⁡B=csin⁡C 
+$$\begin{aligned} &\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} \\ \end{aligned}$$
 
 * **Law of Cosines:** A generalized version of Pythagoras for any triangle.
     
 
-c2=a2+b2−2abcos⁡C
+$$\begin{aligned} &c^2 = a^2 + b^2 - 2ab \cos C \end{aligned}$$
 
 ### 7\. Norms & Euclidean Distance
 
 **Norm:** The size or length of a vector. It measures how far the point is from the origin (0,0).
 
-|x|=∑i=1nxi2 
+$$\begin{aligned} &\|\mathbf{x}\| = \sqrt{\sum_{i=1}^{n} x_i^2} \\ \end{aligned}$$
 
 **Euclidean Distance:** The straight-line distance between two specific points in space. It is calculated using the Pythagorean theorem.
 
-d(P,Q)=(q1−p1)2+⋯+(qn−pn)2
+$$\begin{aligned} d(P, Q) = \sqrt{(q_1 - p_1)^2 + \dots + (q_n - p_n)^2} \end{aligned}$$
+
+That is the foundation. We have covered the spaces where data lives , the ways we measure it, and the rules that govern its geometry.
+
+This page is meant to be bookmarked. It’s the reference manual.
+
+Now that we can define *where* the data is, we need to learn how to move it. Next, we tackle **Calculus & Gradients**.
