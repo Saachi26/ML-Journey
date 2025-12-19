@@ -216,14 +216,14 @@ It works step-by-step to straighten out the vectors:
 
 1. Normalize the first vector 𝐚₁ to get 𝐞₁.
     
-
-Subtract the Projection: Take the next vector 𝐚₂ and subtract the part of it that points in the direction of 𝐞₁. This leaves only the perpendicular part.
+2. Subtract the Projection: Take the next vector 𝐚₂ and subtract the part of it that points in the direction of 𝐞₁. This leaves only the perpendicular part.
+    
 
 $$\vec{v}k = \vec{a}k - \sum{i=1}^{k-1} \text{proj}{\vec{e}_i}(\vec{a}_k)$$
 
-1. Normalize that remainder to get 𝐞₂.
+3. Normalize that remainder to get 𝐞₂.
     
-2. **Repeat** for all vectors.
+4. **Repeat** for all vectors.
     
 
 ## **11\. Special Matrices**
