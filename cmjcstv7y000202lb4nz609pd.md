@@ -1,5 +1,6 @@
 ---
 title: "The Unified Theory of Matrices & Vector Spaces"
+seoDescription: "From linear systems to SVD mastering the architecture of data."
 datePublished: Fri Dec 05 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: cmjcstv7y000202lb4nz609pd
 slug: the-unified-theory-of-matrices-and-vector-spaces
