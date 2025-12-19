@@ -21,10 +21,10 @@ Before we can do any math, we need to define the "space" we are working in.
 
 * **Real Numbers {R}:** This represents the set of all continuous numbers - decimals, fractions, negatives, and zero (e.g., 3.14, -5, 0).
     
-* **Vector Space {R}^n:** This is just a fancy term for a collection of vectors that have n components. If a vector has 2 numbers (x, y), it lives in 2D space {R}². If it has 3 numbers, it lives in 3D space {R}³
+* **Vector Space:** This is just a fancy term for a collection of vectors that have n components. If a vector has 2 numbers (x, y), it lives in 2D space {R}². If it has 3 numbers, it lives in 3D space {R}³
     
 
-$$$$ \begin{aligned} &\mathbf{x} \in \mathrm{R}^n \\ &\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} \end{aligned} $$$$
+$$\begin{aligned} &\mathbf{x} \in \mathrm{R}^n \\ &\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} \end{aligned}$$
 
 ### 2\. The Cartesian Coordinate System
 
@@ -35,7 +35,7 @@ The Cartesian system is the classic grid we use to locate points. It uses two pe
 * **Coordinates:** An ordered pair (x, y)tells you exactly how far to move right/left (x-coordinate) and up/down (y-coordinate) from the origin.
     
 
-$$$$ \begin{aligned} &P_{2D} = (x, y) \in \mathrm{R}^2 \\ &P_{3D} = (x, y, z) \in \mathrm{R}^3 \end{aligned} $$$$
+P2D=(x,y)∈R2 P3D=(x,y,z)∈R3
 
 ### 3\. Angles & Measurement (Degrees vs. Radians)
 
@@ -46,15 +46,15 @@ An angle measures the amount of rotation between two lines.
 * **Radians:** The standard unit in mathematics. One radian is the angle where the arc length equals the radius. A full circle is 2π radians (approx 6.28).
     
 
-$$$$ \begin{aligned} &\mathrm{Radians} = \mathrm{Degrees} \times \frac{\pi}{180} \end{aligned} $$$$
+Radians=Degrees×π180
 
- $$ $$ \begin{aligned} &x = r \cos \theta \\ &y = r \sin \theta \\ &\tan \theta = \frac{y}{x} \end{aligned} $$$$
+x=rcos⁡θ y=rsin⁡θ tan⁡θ=yx
 
 ### 4\. The Unit Circle
 
 The Unit Circle is a circle with a radius of exactly 1, centered at (0,0). Any point on the circle edge can be defined by the angle The x-coordinate is the Cosine, and the y-coordinate is the Sine.
 
-$$$$ \begin{aligned} &x = \cos \theta \\ &y = \sin \theta \\ &x^2 + y^2 = 1 \end{aligned} $$$$
+x=cos⁡θ y=sin⁡θ x2+y2=1
 
 ### 5\. Fundamental Trigonometric Identities
 
@@ -69,7 +69,7 @@ This is the most famous identity. It states that for any angle, the square of si
 * tanθ is how steep the hill is (Slope). secθ is the actual distance you walk up that hill (Hypotenuse). This identity lets us calculate the distance traveled just by knowing the steepness!
     
 
-$$$$ \begin{aligned} &\sin^2 \theta + \cos^2 \theta = 1 \\ &1 + \tan^2 \theta = \sec^2 \theta \end{aligned} $$$$
+sin2⁡θ+cos2⁡θ=1 1+tan2⁡θ=sec2⁡θ
 
 B. Sum & Difference Formulas:
 
@@ -78,7 +78,7 @@ These allow us to calculate the sine or cosine of angles that are added, subtrac
 * In data processing, we often rotate vectors. If I rotate a vector by angle α and then again by β, I don't want to calculate two separate rotations. I can use the sum formula sin(α + β) to compute the final position in one step.
     
 
-$$$$ \begin{aligned} &\sin(\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta \\ &\cos(\alpha \pm \beta) = \cos \alpha \cos \beta \mp \sin \alpha \sin \beta \end{aligned} $$$$
+sin⁡(α±β)=sin⁡αcos⁡β±cos⁡αsin⁡β cos⁡(α±β)=cos⁡αcos⁡β∓sin⁡αsin⁡β
 
 C. Double Angle Formulas:
 
@@ -87,7 +87,7 @@ These are special cases of the Sum formulas where the two angles are identical (
 * Often in calculus or physics engines you end up with messy terms like 2sinθcosθ.This formula lets you compress that entire mess into a single, clean term: sin(2θ). It simplifies the math significantly.
     
 
-$$$$ \begin{aligned} &\sin(2\theta) = 2 \sin \theta \cos \theta \\ &\cos(2\theta) = \cos^2 \theta - \sin^2 \theta \end{aligned} $$$$
+sin⁡(2θ)=2sin⁡θcos⁡θ cos⁡(2θ)=cos2⁡θ−sin2⁡θ
 
 ### 6\. Law of Sines and Cosines
 
@@ -96,19 +96,19 @@ Standard trigonometry, only works for right-angled triangles. When we have a gen
 * **Law of Sines:** Proportional relationship between sides and angles.
     
 
-$$$$ \begin{aligned} &\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} \\ \end{aligned} $$$$
+asin⁡A=bsin⁡B=csin⁡C 
 
 * **Law of Cosines:** A generalized version of Pythagoras for any triangle.
     
 
-$$$$ \begin{aligned} &c^2 = a^2 + b^2 - 2ab \cos C \end{aligned} $$$$
+c2=a2+b2−2abcos⁡C
 
 ### 7\. Norms & Euclidean Distance
 
 **Norm:** The size or length of a vector. It measures how far the point is from the origin (0,0).
 
-$$$$ \begin{aligned} &\|\mathbf{x}\| = \sqrt{\sum_{i=1}^{n} x_i^2} \\ \end{aligned} $$$$
+|x|=∑i=1nxi2 
 
 **Euclidean Distance:** The straight-line distance between two specific points in space. It is calculated using the Pythagorean theorem.
 
-$$$$ \begin{aligned} &d(P, Q) = \sqrt{(q_1 - p_1)^2 + \dots + (q_n - p_n)^2} \end{aligned} $$$$
+d(P,Q)=(q1−p1)2+⋯+(qn−pn)2
