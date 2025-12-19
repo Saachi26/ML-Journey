@@ -13,7 +13,7 @@ tags: machine-learning, learning, mathematics, matrix, learning-journey, learnin
 
 Before we draw a matrix, we have to understand where it comes from: **Systems of Linear Equations**.
 
-A generic linear system with $m$ equations and $n$ unknowns takes the form:
+A generic linear system with m equations and n unknowns takes the form:
 
 $$\begin{align*} a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n &= b_1 \\ a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n &= b_2 \\ \vdots \\ a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n &= b_m \end{align*}$$
 
@@ -151,7 +151,7 @@ But any two vectors {𝐚, 𝐛} can form a basis for 2D space, as long as they 
 
 $$Basis = \{\vec{a}, \vec{b}\}$$
 
- $$ \text{Span}(\{\vec{a}, \vec{b}\}) = \mathbb{R}^2$$
+$$\text{Span}(\{\vec{a}, \vec{b}\}) = \mathbb{R}^2$$
 
 ## **7\. Projections: The Shadow of Data**
 
@@ -219,7 +219,7 @@ It works step-by-step to straighten out the vectors:
 
 Subtract the Projection: Take the next vector 𝐚₂ and subtract the part of it that points in the direction of 𝐞₁. This leaves only the perpendicular part.
 
-$$\vec{v}_k = \vec{a}_k - \sum_{i=1}^{k-1} \text{proj}_{\vec{e}_i}(\vec{a}_k)$$
+$$\vec{v}k = \vec{a}k - \sum{i=1}^{k-1} \text{proj}{\vec{e}_i}(\vec{a}_k)$$
 
 1. Normalize that remainder to get 𝐞₂.
     
@@ -259,7 +259,6 @@ $$A = Q R$$
     
 * **R (Upper Triangular Matrix):** A matrix where all entries below the main diagonal are zero.
     
-
 * **Why it matters:**
     
     * It provides **numerically stable solutions** for linear systems (computers love it because it reduces rounding errors).
@@ -281,7 +280,6 @@ $$A = L U$$
     
 * **U(Upper Triangular):** Entries below the diagonal are zero.
     
-
 * **Why it matters:**
     
     * It facilitates **matrix inversion** and solving linear equations efficiently.
@@ -299,11 +297,10 @@ $$A = U \Sigma V^*$$
 
 * **U:** An **Orthogonal** matrix.
     
-* Σ**:** A **Diagonal** matrix containing the "singular values" (magnitudes).
+* Σ\*\*:\*\* A **Diagonal** matrix containing the "singular values" (magnitudes).
     
 * **V\*:** The **Conjugate Transpose** of an orthogonal matrix.
     
-
 * **Why it matters:**
     
     * It is the engine behind **Principal Component Analysis (PCA)** used for dimensionality reduction.
