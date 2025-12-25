@@ -16,6 +16,12 @@ I’ve compiled every function I learned today into this guide.
 
 A NumPy array is a grid of values, all of the same type.
 
+**Homogeneous:** It contains elements of only one data type (usually `float64` or `int64`).
+
+**Contiguous:** It is stored in a continuous block of memory, allowing the CPU to process it efficiently.
+
+#### **Key Attributes**
+
 * **Rank:** Number of dimensions.
     
 * **Shape:** The size (rows, columns).
@@ -87,9 +93,36 @@ Creating a Gaussian (Normal) distribution is essential for initializing weights 
 gaussian_arr = np.random.normal(0, 0.1, (3, 3))
 ```
 
-### 3\. Manipulation: Changing Structure
+### **3\. The Silent Bug: Copy vs. View**
+
+This is the most dangerous trap in NumPy. If you assign `b = a`, Python just points to the same memory address. **Changing** `b` changes `a`.
+
+```python
+a = np.array([1, 2, 3])
+b = a          # This is a VIEW
+b[0] = 99
+print(a)       # Output: [99, 2, 3] -> Original is modified!
+
+# The Fix:
+b = np.copy(a) # This is a COPY (Safe)
+```
+
+### **4\. The Shape Shifter: Reshaping & Axes**
 
 Data rarely comes in the shape we want. We have to bend it.
+
+#### **Reshaping**
+
+`reshape()` creates a new view of the data without changing the underlying information.
+
+* **The** `-1` Trick: Passing `-1` lets NumPy calculate the missing dimension automatically.
+    
+
+```python
+arr = np.arange(1, 10) # 9 items
+grid = arr.reshape(3, 3) # 3x3 matrix
+col_vector = arr.reshape(-1, 1) # 9x1 column vector
+```
 
 #### Inserting a New Axis
 
@@ -115,16 +148,36 @@ arr = np.array([[1, 2, 3], [4, 5, 6]])
 arr[:, [0, 2]] = arr[:, [2, 0]]
 ```
 
-#### Copy vs View (CRITICAL)
+### 5.**Vectorization & Broadcasting**
 
-If you assign `b = a`, Python just points to the same memory. Changing `b` changes `a`.
+This is why we use NumPy: Speed.
 
-* **View:** `b = a` (Fast, dangerous).
-    
-* **Copy:** `b = np.copy(a)` (Safe, independent).
-    
+#### **Vectorization**
 
-### 4\. The Joining Station: Stacking & Concatenating
+Applying an operation to the entire array at once, removing loops.
+
+```python
+arr = np.array([1, 2, 3])
+print(arr * 10) # Output: [10, 20, 30] 
+```
+
+#### **Broadcasting**
+
+How NumPy handles math between arrays of *different* shapes. It "stretches" the smaller array to fit.
+
+#### **The Dot Product (**[`np.dot`](http://np.dot))
+
+The fundamental operation of Neural Networks.
+
+$$\text{output} = \text{inputs} \cdot \text{weights} + \text{bias}$$
+
+```python
+inputs = np.array([2, 4])
+weights = np.array([0.5, 0.25])
+output = np.dot(inputs, weights) # Result: 2.0
+```
+
+### 6\. The Joining Station: Stacking & Concatenating
 
 Merging datasets is a daily task.
 
@@ -160,7 +213,7 @@ The generic version of stacking. You specify the `axis`.
 np.concatenate((a.reshape(1,2), b.reshape(1,2)), axis=0)
 ```
 
-### 5\. The Splitting Station
+### 5\. Splitting
 
 The opposite of joining. Useful for splitting data into "Training" and "Test" sets.
 
@@ -172,9 +225,9 @@ parts = np.split(x, 3)
 print(parts[0]) # Output: [0, 1, 2]
 ```
 
-### 6\. Logic & Set Operations (Data Cleaning)
+### 6\. Logic Data Cleaning
 
-How do we find unique items or compare arrays?
+Real-world data is dirty.How do we find unique items or compare arrays?
 
 #### Unique & Union
 
@@ -209,7 +262,35 @@ arr = np.array([0, 0, 1, 2, 3, 0])
 print(np.trim_zeros(arr)) # Output: [1, 2, 3]
 ```
 
-This was a massive download of syntax, but here is the mental model I built:
+### **7\. Math Operations**
+
+Finally, the engine itself. NumPy contains highly optimized implementation of standard statistical and algebraic functions.
+
+#### **Statistics**
+
+We use these to understand the distribution of our dataset.
+
+* `np.mean()`: The average.
+    
+* `np.median()`: The middle value (robust to outliers).
+    
+* `np.std()`: The Standard Deviation (how spread out the data is).
+    
+
+#### **The Dot Product (**[`np.dot`](http://np.dot))
+
+This is the fundamental operation of Neural Networks. It multiplies input vectors by weight vectors and sums the results.
+
+```python
+inputs = np.array([2, 4])
+weights = np.array([0.5, 0.25])
+
+# (2 * 0.5) + (4 * 0.25) = 1.0 + 1.0 = 2.0
+output = np.dot(inputs, weights)
+print(output) # 2.0
+```
+
+Steps:
 
 1. **Create** the grid (`arange`, `zeros`).
     
