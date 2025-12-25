@@ -135,6 +135,16 @@ df = pd.DataFrame(data)
 print(df)
 ```
 
+```python
+# JSON often comes as a list of dictionaries
+# Pandas handles the conversion automatically
+df_json = pd.read_json('data.json')
+
+print(df_json.to_string()) # .to_string() prints the entire dataframe
+```
+
+**Pro Tip:** If your JSON is nested (dictionaries inside dictionaries), you might need `pd.json_normalize()`.
+
 ### 4\. Analyzing the Data
 
 Once the file is loaded, how do we know if it's broken?
@@ -148,12 +158,28 @@ Instead of printing the whole thing (and freezing my VS Code), I use:
 * `tail(10)`: Last 10 rows.
     
 
-#### Info About the Data ([`df.info`](http://df.info)`()`)
+#### Info About the Data ([`df.info`](http://df.info)`()`,)
 
 This is the single most useful command in Pandas. It tells you the schema.
 
+and `describe()` instantly calculates statistics for every numerical column.
+
+**Output usually looks like this:**
+
+* **Count:** How many rows?
+    
+* **Mean:** The average.
+    
+* **Std:** Standard Deviation (how spread out is the data?).
+    
+* **Min/Max:** The range boundaries.
+    
+* **25%/50%/75%:** The quartiles.
+    
+
 ```python
 print(df.info())
+print(df.describe())
 ```
 
 **Result Explained:**
@@ -180,6 +206,16 @@ memory usage: 5.4 KB
     
 4. **Dtype:** Tells you if the data is an integer (`int64`), float, or object (text).
     
+
+#### Finding Relationships (Correlation)
+
+Does the duration of the workout correlate with calories burned?
+
+```python
+print(df.corr())
+# Output ranges from -1 to 1. 
+# 1.0 means perfect correlation.
+```
 
 #### Null Values
 
