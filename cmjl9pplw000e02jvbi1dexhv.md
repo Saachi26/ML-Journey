@@ -3,6 +3,7 @@ title: "Data Preprocessing in Machine Learning"
 datePublished: Sun Dec 14 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: cmjl9pplw000e02jvbi1dexhv
 slug: data-preprocessing-in-machine-learning
+cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/g5_rxRjvKmg/upload/859f645bcda8a4da20067d27159ef5d9.jpeg
 tags: python, machine-learning, learning-journey, learning-in-public, data-preprocessing
 
 ---
