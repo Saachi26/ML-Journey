@@ -35,6 +35,8 @@ EDA is the diagnostic phase. It is essential to verify the integrity of the data
 
 **Goal:** To resolve anomalies and errors that would otherwise cause model instability or convergence failure.
 
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1766659631612/5f9115a5-4750-45c4-9ad8-1f137c6a161b.webp align="center")
+
 #### **A. Handling Missing Values (Imputation)**
 
 There are three primary strategies for addressing Null/NaN values:
@@ -85,9 +87,9 @@ Extreme deviations can significantly skew statistical parameters (like Mean and 
 * **IQR Method:** Filters data falling outside the Interquartile Range.
     
 
-$$Q1 - 1.5 \times IQR $$
+$$Q1 - 1.5 \times IQR$$
 
- $$Q3 + 1.5 \times IQR$$
+$$Q3 + 1.5 \times IQR$$
 
 ### **2\. Data Integration**
 
@@ -114,7 +116,6 @@ Machine Learning models require numerical input. Textual labels must be mapped t
         
 * **One-Hot Encoding:** Creates binary columns for each category (e.g., `Is_Red`, `Is_Blue`).
     
-
 * *Application:* Nominal data where no intrinsic order exists to prevent the model from inferring false hierarchies.
     
 
