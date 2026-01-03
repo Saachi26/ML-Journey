@@ -3,6 +3,7 @@ title: "Linear Regression"
 datePublished: Sat Jan 03 2026 11:39:54 GMT+0000 (Coordinated Universal Time)
 cuid: cmjy8dkhp000002l4attsedr9
 slug: linear-regression
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1767444879366/f79ee33a-64f8-409a-9d40-657c26d7e290.jpeg
 tags: python, machine-learning, learning, scikit-learn, learning-journey, linearregression, learn-in-public
 
 ---
